@@ -5,9 +5,12 @@ import { FreeMode } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Navigation, Pagination, Scrollbar} from 'swiper'
+import 'swiper/swiper-bundle.min.css'
 
 function Fiscalias(){
   const url="http://localhost:8080/MP/allFiscalia"
+  
   
   const [todos, setTodos]=useState()
   const fetchApi=async () => {
@@ -41,11 +44,15 @@ function Fiscalias(){
               <h1>Fiscalias</h1>
              <div className='container py-4 px-4 justify-content-center'>
                 <Swiper
+                    modules={[Navigation, Pagination, Scrollbar]}
+                    navigation
+                    pagination={{clickable:true}}
+                    scrollbar={{draggable:true}}
                     freeMode={true}
                     grabCursor={true}
-                    modules={[FreeMode]}
                     className="mySwiper"
-                    slidesPerView={1} >
+                    slidesPerView={1}
+                     >
                     {todos.map((todo,index)=>
                         { 
                             return  <SwiperSlide>
@@ -68,12 +75,13 @@ function Fiscalias(){
                                 </div>
                               </form>
                                 <h3>{todo['fs_nombre']}</h3>
+                                <h3>| </h3>
                             </SwiperSlide>  
                         }) 
                     }
                 </Swiper>
              </div>
-             <button className='Pregunta'><a href='/addFiscalia'>Agregar Fiscalia</a></button>
+             <button className='Pregunta'><a href='/AddFiscalia'>Agregar Fiscalia</a></button>
             </header>
             </div>
           );

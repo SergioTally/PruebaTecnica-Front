@@ -3,7 +3,7 @@ import './App.css';
 
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Fiscalias from './Fiscalias.js'
-import AddFiscalia from './addFiscalia.js'
+import AddFiscalia from './AddFiscalia.js'
 
 function Header(){
   return (
@@ -23,7 +23,7 @@ function App() {
     <Header/>
     <Routes>
       <Route path='/Fiscalias' element={<Fiscalias />} active />
-      <Route path='/addFiscalia' element={<AddFiscalia />} />
+      <Route path='/AddFiscalia' element={<AddFiscalia />} />
     </Routes>
   </BrowserRouter>
   </>)
