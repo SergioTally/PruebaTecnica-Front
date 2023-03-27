@@ -25,6 +25,18 @@
   color: white;
 }
 
+.Pregunta{
+  color: #fff;
+  background-color: #75C9C8;
+  border-color: #75C9C8;
+  float: left;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  line-height: 3;
+  border-radius: 0.5rem;
+  max-width: 33%;
+}
+
 .App-link {
   color: #61dafb;
 }

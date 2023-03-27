@@ -19,7 +19,6 @@ function Fiscalias(){
   useEffect(()=>{
     fetchApi()
   },[])
-
   
     if(!todos)
     {
@@ -28,7 +27,7 @@ function Fiscalias(){
               <header className="App-header">
               <h2>Fiscalias</h2>
               <h2>Sin Fiscalias que mostrar</h2>
-              <button className='Pregunta'>Agregar Fiscalia</button>
+              <button className='Pregunta'><a href="/addFiscalia">Agregar Fiscalia</a></button>
              <div className='containet py-4 px-4 justify-content-center'></div>
             </header>
             </div>
@@ -46,37 +45,39 @@ function Fiscalias(){
                     grabCursor={true}
                     modules={[FreeMode]}
                     className="mySwiper"
-                    slidesPerView={1}
-                >
-                    {todos.map((todo,index)=>{ 
-                return <SwiperSlide>
-                <div className='p-0 overflow-hidden h-100 shadow'>
-                    <div className='overflow-hidden rounded p-0 bs-light'>
-                        <div className='row'>
-                            <label className='col-lg-2'>Nombre</label>
-                            <input className='col-lg-10' readOnly id='fs_nombre' name='fs_nombre' value={todo['fs_nombre']}></input>
-                        </div>
-                        <div className='row'>
-                            <label className='col-lg-2'>Direccion</label>
-                            <input className='col-lg-10' readOnly id='fs_direccion' name='fs_direccion' value={todo['fs_direccion']}></input>
-                        </div>
-                        <div className='row'>
-                            <label className='col-lg-2'>Numero</label>
-                            <input className='col-lg-10' readOnly id='fs_numero' name='fs_numero' value={todo['fs_numero']}></input>
-                        </div>
-                    </div>
-                </div>
-                <h3>{todo['fs_nombre']}</h3>
-            </SwiperSlide>  }) 
+                    slidesPerView={1} >
+                    {todos.map((todo,index)=>
+                        { 
+                            return  <SwiperSlide>
+                              <form >
+                                <div className='p-0 overflow-hidden h-100 shadow'>
+                                    <div className='overflow-hidden rounded p-0 bs-light'>
+                                        <div className='row'>
+                                            <label className='col-lg-2'>Nombre</label>
+                                            <input className='col-lg-10' readOnly id='fs_nombre' name='fs_nombre' value={todo['fs_nombre']}></input>
+                                        </div>
+                                        <div className='row'>
+                                            <label className='col-lg-2'>Direccion</label>
+                                            <input className='col-lg-10' readOnly id='fs_direccion' name='fs_direccion' value={todo['fs_direccion']}></input>
+                                        </div>
+                                        <div className='row'>
+                                            <label className='col-lg-2'>Numero</label>
+                                            <input className='col-lg-10' readOnly id='fs_numero' name='fs_numero' value={todo['fs_numero']}></input>
+                                        </div>
+                                    </div>
+                                </div>
+                              </form>
+                                <h3>{todo['fs_nombre']}</h3>
+                            </SwiperSlide>  
+                        }) 
                     }
                 </Swiper>
              </div>
+             <button className='Pregunta'><a href='/addFiscalia'>Agregar Fiscalia</a></button>
             </header>
             </div>
           );
     }
-
-      
 }
 
 export default Fiscalias;
