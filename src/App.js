@@ -6,6 +6,7 @@ import Fiscalias from './Fiscalias.js'
 import AddFiscalia from './AddFiscalia.js'
 import UpdateFiscalia from './UpdateFiscalia.js'
 import DeleteFiscalia from './DeleteFiscalia.js'
+import Bienvenida from './Bienvenida.js'
 
 function Header(){
   return (
@@ -31,7 +32,8 @@ function App() {
     <Header/>
     <Routes>
       <Route path='/Fiscalias' element={<Fiscalias />} />
-      <Route path='' element={<Fiscalias />} active />
+      <Route path='' element={<Bienvenida />} active />
+      <Route path='/Bienvenida' element={<Bienvenida />} active />
       <Route path='/AddFiscalia' element={<AddFiscalia />} />
       <Route path='/UpdateFiscalia/:fs_id' element={<UpdateFiscalia />} />
       <Route path='/DeleteFiscalia/:fs_id' element={<DeleteFiscalia />} />

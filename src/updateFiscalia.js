@@ -24,8 +24,6 @@ function UpdateFiscalia(){
 
     const onSubmit=async (data)=>{
         try {
-            console.log(data)
-
             const response = await fetch('http://localhost:8080/MP/updateFiscalia', {
               method: 'PUT',
               headers: {
@@ -35,7 +33,6 @@ function UpdateFiscalia(){
             });
             if (response.ok) {
                 setIsSuccess(true);
-                console.log(response);
               }
             // Procesar la respuesta del servidor
           } catch (error) {

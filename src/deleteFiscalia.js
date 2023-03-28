@@ -23,7 +23,6 @@ function DeleteFiscalia(){
         setTodos(response)
         if (response.ok) {
             setIsSuccess(true);
-            console.log(response);
           }
         // Procesar la respuesta del servidor
       } catch (error) {
@@ -33,7 +32,7 @@ function DeleteFiscalia(){
   }
   useEffect(()=>{
     fetchApi()
-    navigate("/Fiscalias", {replace:true});
+    navigate("/Bienvenida");
   },[ ])
 
         return (

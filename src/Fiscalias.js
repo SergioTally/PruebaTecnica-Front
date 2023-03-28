@@ -92,7 +92,9 @@ function Fiscalias(){
                     }
                 </Swiper>
              </div>
-             <button className='Pregunta'><a href='/AddFiscalia'>Agregar Fiscalia</a></button>
+             <form action="/AddFiscalia" method='GET'>
+              <input type="submit" className='Pregunta btn-accion-tabla col-lg-12' value="Agregar Fiscalia"/>
+             </form>
             </header>
             </div>
           );
