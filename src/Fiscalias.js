@@ -10,6 +10,8 @@ import 'swiper/swiper-bundle.min.css'
 function Fiscalias(){
   const url="http://localhost:8080/MP/allFiscalia"
   let urlTemporal="/updateFiscalia/"
+
+  let urlDeleteTemporal="/deleteFiscalia/"
   
   
   const [todos, setTodos]=useState()
@@ -55,6 +57,7 @@ function Fiscalias(){
                     {todos.map((todo,index)=>
                         { 
                           const urlEnvio=urlTemporal.concat(todo['fs_id'])
+                          const urlDelete=urlDeleteTemporal.concat(todo['fs_id'])
                             return  <SwiperSlide>
                               <form action={urlEnvio} method='GET'>
                                 <div className='p-0 overflow-hidden h-100 shadow'>
@@ -72,9 +75,16 @@ function Fiscalias(){
                                             <input className='col-lg-10' readOnly value={todo['fs_numero']}></input>
                                         </div>
                                     </div>
+                                    <div className='row'>
+                                      <input  className='Pregunta btn-accion-tabla' type="submit" value="Editar Fiscalia"></input>
+                                    </div>
                                 </div>
-                                <input type="submit" value="Editar Fiscalia"></input>
                               </form>
+                              <form action={urlDelete} method='GET'>
+                              <div className='row'>
+                                  <input  className='NoPregunta btn-accion-tabla' type="submit" value="Eliminar Fiscalia"></input>
+                                </div>
+                                </form>
                                 <h3>{todo['fs_nombre']}</h3>
                                 <h3>| </h3>
                             </SwiperSlide>  

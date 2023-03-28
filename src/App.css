@@ -14,6 +14,33 @@
   }
 }
 
+.text-danger {
+  color: #e3342f !important;
+}
+.fa, .far, .fas {
+  font-family: "Font Awesome 5 Free";
+}
+.fab, .far {
+  font-weight: 400;
+}
+.fa, .fab, .fad, .fal, .far, .fas {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+.btn-accion-tabla {
+  cursor: pointer;
+  border: none;
+  background: 0;
+  padding: 0 0 0 5px;
+  font-size: 14px !important;
+  line-height: 1.5;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -29,6 +56,25 @@
   color: #fff;
   background-color: #75C9C8;
   border-color: #75C9C8;
+  float: left;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  line-height: 3;
+  border-radius: 0.5rem;
+  max-width: 33%;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.NoPregunta{
+  color: #fff;
+  background-color: #c97575;
+  border-color: #d6775f;
   float: left;
   font-weight: 700;
   padding: 0.25rem 0.5rem;
