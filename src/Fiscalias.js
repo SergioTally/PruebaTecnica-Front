@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import { FreeMode } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,13 +9,13 @@ import 'swiper/swiper-bundle.min.css'
 
 function Fiscalias(){
   const url="http://localhost:8080/MP/allFiscalia"
+  let urlTemporal="/updateFiscalia/"
   
   
   const [todos, setTodos]=useState()
   const fetchApi=async () => {
     const response = await fetch(url)
     const responseJSON = await response.json()
-    console.log(responseJSON)
     setTodos(responseJSON)
   }
   useEffect(()=>{
@@ -55,24 +54,26 @@ function Fiscalias(){
                      >
                     {todos.map((todo,index)=>
                         { 
+                          const urlEnvio=urlTemporal.concat(todo['fs_id'])
                             return  <SwiperSlide>
-                              <form >
+                              <form action={urlEnvio} method='GET'>
                                 <div className='p-0 overflow-hidden h-100 shadow'>
                                     <div className='overflow-hidden rounded p-0 bs-light'>
                                         <div className='row'>
                                             <label className='col-lg-2'>Nombre</label>
-                                            <input className='col-lg-10' readOnly id='fs_nombre' name='fs_nombre' value={todo['fs_nombre']}></input>
+                                            <input className='col-lg-10' readOnly  value={todo['fs_nombre']}></input>
                                         </div>
                                         <div className='row'>
                                             <label className='col-lg-2'>Direccion</label>
-                                            <input className='col-lg-10' readOnly id='fs_direccion' name='fs_direccion' value={todo['fs_direccion']}></input>
+                                            <input className='col-lg-10' readOnly value={todo['fs_direccion']}></input>
                                         </div>
                                         <div className='row'>
                                             <label className='col-lg-2'>Numero</label>
-                                            <input className='col-lg-10' readOnly id='fs_numero' name='fs_numero' value={todo['fs_numero']}></input>
+                                            <input className='col-lg-10' readOnly value={todo['fs_numero']}></input>
                                         </div>
                                     </div>
                                 </div>
+                                <input type="submit" value="Editar Fiscalia"></input>
                               </form>
                                 <h3>{todo['fs_nombre']}</h3>
                                 <h3>| </h3>

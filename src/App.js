@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Fiscalias from './Fiscalias.js'
 import AddFiscalia from './AddFiscalia.js'
+import UpdateFiscalia from './UpdateFiscalia.js'
 
 function Header(){
   return (
@@ -24,6 +25,7 @@ function App() {
     <Routes>
       <Route path='/Fiscalias' element={<Fiscalias />} active />
       <Route path='/AddFiscalia' element={<AddFiscalia />} />
+      <Route path='/UpdateFiscalia/:fs_id' element={<UpdateFiscalia />} />
     </Routes>
   </BrowserRouter>
   </>)
