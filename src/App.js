@@ -30,13 +30,15 @@ function App() {
   <BrowserRouter>
     <Header/>
     <Routes>
-      <Route path='/Fiscalias' element={<Fiscalias />} active />
+      <Route path='/Fiscalias' element={<Fiscalias />} />
+      <Route path='' element={<Fiscalias />} active />
       <Route path='/AddFiscalia' element={<AddFiscalia />} />
       <Route path='/UpdateFiscalia/:fs_id' element={<UpdateFiscalia />} />
       <Route path='/DeleteFiscalia/:fs_id' element={<DeleteFiscalia />} />
     </Routes>
   </BrowserRouter>
-  </>)
+  </>
+  )
 }
 
 export default App;
